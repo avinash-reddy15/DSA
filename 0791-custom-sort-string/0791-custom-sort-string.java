@@ -7,11 +7,12 @@ class Solution {
             num++;
         }
         //char[] chr=s.toCharArray();
-        String sortedString = s.chars()                               // Get IntStream of characters
-                                    .mapToObj(c -> (char) c)             // Convert to Stream<Character>
-                                    .sorted((a, b) -> arr[a - 'a'] - arr[b - 'a']) // Sort using custom comparator
-                                    .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append) // Collect characters into a StringBuilder
+        String sortedString = s.chars()                               
+                                    .mapToObj(c -> (char) c)             
+                                    .sorted((a, b) -> arr[a - 'a'] - arr[b - 'a']) 
+                                    .collect(StringBuilder::new, StringBuilder::append,
+                                    StringBuilder::append)
                                     .toString();
-return sortedString;        
+        return sortedString;        
     }
 }
